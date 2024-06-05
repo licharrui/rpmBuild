@@ -1,0 +1,13 @@
+template(
+    name="ngsformat"
+    type="string"
+    string="%msg%\n"
+)
+
+if $programname == "ngs-oplatform" then {
+    action(
+        type="omfile"
+        template="ngsformat"
+        file="/opt/ngs/log/ngs-oplatform/stdout.log"
+    )
+}

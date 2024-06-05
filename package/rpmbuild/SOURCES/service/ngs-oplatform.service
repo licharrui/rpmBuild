@@ -1,0 +1,20 @@
+[Unit]
+Description = NGS Oplatform Server
+
+[Service]
+Environment="PYTHONPATH=/opt/ngs/application/ngs-oplatform"
+Environment="LD_LIBRARY_PATH=/opt/ngs/application/ngs-oplatform/libs"
+WorkingDirectory = /opt/ngs/application/ngs-oplatform/
+ExecStart = /opt/ngs/application/ngs-oplatform/ngs-oplatform --yaml /opt/ngs/application/ngs-oplatform/configs/system.yaml:uwsgi
+ExecReload = /bin/kill -HUP $MAINPID
+Type=simple
+KillMode = control-group
+KillSignal = SIGINT
+Restart = always
+RestartSec=5
+StartLimitInterval=0
+SyslogIdentifier=ngs-oplatform
+LimitNOFILE=65535
+
+[Install]
+WantedBy = multi-user.target

@@ -1,0 +1,12 @@
+/opt/ngs/log/ngs-oplatform/stdout.log
+{
+    size 100M
+    rotate 30
+    ifempty
+    missingok
+    copytruncate
+    compress
+    notifempty
+    dateext
+    dateformat -%Y%m%d%H0000
+}

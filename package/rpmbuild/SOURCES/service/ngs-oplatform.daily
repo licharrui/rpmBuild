@@ -1,0 +1,13 @@
+/opt/ngs/log/ngs-oplatform/stdout.log
+{
+    daily
+    rotate 30
+    ifempty
+    missingok
+    copytruncate
+    compress
+    notifempty
+    dateext
+    dateformat -%Y%m%d235959
+    dateyesterday
+}
